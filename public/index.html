@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Les Petits Plats vous permet de chercher parmi plus de 1500 recettes">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/991beb3e09.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <title>Les Petits Plats</title>
+    </head>
+
+    <body>
+        <header>
+            <img class="relative left-[4.5%] top-[9%]" src="../src/assets/images/Logo.png" alt="Les Petits Plats Logo">
+            <div class="flex flex-col items-center mt-64">
+                <h1 class="text-yellow-300">cherchez parmi plus de 1500 recettes<br>du quotidien, simples et délicieuses</h1>
+                <div class="search_wrapper">
+                    <input
+                        id="search_input"
+                        data-search
+                        type="search"
+                        name="search"
+                        placeholder="Rechercher une recette, un ingrédient, ..."
+                        aria-label="Search for a recipe"
+                    >
+                    <button
+                        id="search_button"
+                        data-search-btn
+                        type="button"
+                        aria-label="Search"
+                    >
+                        <img class="w-1/10 h-4/5" src="../src/assets/images/Loop.png" alt="Search Icon">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="flex flex-col justify-between">
+                <div class="select_section">
+                    <div class="select_container" data-select-container></div>
+                    <template data-select-template>
+                        <div class="select_dropdown" data-select-dropdown>
+                            <button
+                                id=""
+                                class="dropdown_buttton"
+                                aria-label=""
+                                data-dropdown-btn
+                            ></button>
+
+                            <div id="" class="dropdown_content" data-dropdown-content>
+                                <div class="input_container">
+                                    <input
+                                        id=""
+                                        class="dropdown_input"
+                                        type="text"
+                                        aria-label=""
+                                        data-dropdown-input
+                                    >
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <h2 id="recipes_number">1500 recettes</h2>
+                </div>
+
+                <div id="tag_section" class="mt-5"></div>
+            </section>
+
+            <section class="recipes_section" data-recipe-cards-container></section>
+            <template data-recipe-card-template>
+                <article class="recipe_card">
+                    <div class="recipe_image">
+                        <span class="time" data-recipe-time></span>
+                        <img class="image" data-recipe-image src="" alt="">
+                    </div>
+                    <div class="recipe_details">
+                        <h2 class="recipe_title mt-5" data-recipe-name></h2>
+                        <div class="recipe_description mt-5">
+                            <h3 class="title" data-recipe-description-title></h3>
+                            <p class="description mt-5" data-recipe-description-text=""></p>
+                        </div>
+                        <div class="recipe_ingredients mt-5">
+                            <h3 class="title" data-recipe-ingredients-title></h3>
+                            <div class="ingredients" data-recipe-ingredients-list></div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+        </main>
+
+        <noscript>
+            <p>Cette application nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans votre navigateur.</p>
+        </noscript>
+
+        <script type="module" src="../src/scripts/pages/searchbar.js"></script>
+        <script type="module" src="../src/scripts/pages/index.js"></script>
+    </body>
+
+</html>
