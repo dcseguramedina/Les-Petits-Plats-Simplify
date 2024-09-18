@@ -31,7 +31,7 @@ export default function displaySelectDropdowns(selects, listOfOptions) {
 
         dropdownInput.addEventListener('keyup', (e) => {
             e.preventDefault()
-            filterOptions(e.currentTarget)
+            filterOptions(e.currentTarget)            
         })
 
         // Find the correct options list for this select
@@ -86,4 +86,5 @@ function filterOptions(currentTarget) {
         const isVisible = optionInputValue.toLowerCase().includes(selectInputValue)
         option.style.display = isVisible ? '' : 'none'
     })
+
 }

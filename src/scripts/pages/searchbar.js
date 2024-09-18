@@ -106,7 +106,6 @@ function updateSelectOptions(results) {
     ]
 
     const dropdownContents = document.querySelectorAll("[data-dropdown-content]")
-    console.log(dropdownContents)
 
     dropdownContents.forEach((dropdown) => {
         // Find the correct options list for each select
@@ -130,9 +129,9 @@ function updateSelectOptions(results) {
     })
 }
 
-
 export function handleClickOnOptions(e) {
     console.log("hello from click")
     handleSearch(e.currentTarget.textContent)
-    e.currentTarget.textContent = ''
+    e.currentTarget.closest(".dropdown_content")    
+    console.log(e.currentTarget.closest(".dropdown_content"))
 }
